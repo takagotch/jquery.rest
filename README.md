@@ -9,7 +9,28 @@ client.foo.read();
 client.foo.read(42);
 clinet.foo.read('forty-two');
 
+var client = new $.RestClient('/rest/api');
 
+client.add('foo');
+
+var request = client.foo.read();
+request.done(function (data, textStatus, xhrObject) {
+  alert('I have data: ' + data);
+});
+
+client.foo.read().done(function (data) {
+  alert('I have data: ' + data);
+});
+
+var client = new $.RestClient('/rest/api/');
+
+client.add('foo');
+client.foo.add('baz');
+client.foo.read();
+client.foo.read(42);
+client.foo.baz.read();
+client.foo.baz.read(42);
+client.foo.baz.('forty-two', 21);
 
 var client = new $.RestClient('/rest/api/');
 client.add('forum');
@@ -29,6 +50,18 @@ var request = cliet.foo.read(42);
 request.done(funciton (data, textStatus, xhrObject){
   alert('I have data: ' + data);
 });
+
+request: function(resource, options) {
+  return $.ajax(options);
+}
+
+var client = new $.RestClient('/rest/api/');
+
+client.add('add');
+client.foo.add('bar', { isSingle: true });
+client.foo.bar.add('baz');
+
+client.foo.bar.bazz.read(42, 21);
 ```
 
 ```
