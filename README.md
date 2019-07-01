@@ -62,6 +62,17 @@ client.foo.add('bar', { isSingle: true });
 client.foo.bar.add('baz');
 
 client.foo.bar.bazz.read(42, 21);
+
+var clinet = new $.RestClient('/rest/api/');
+client.add('foo');
+
+clinet.foo.read();
+client.foo.read(42);
+
+client.foo.update(42, {my: "updates"});
+client.foo.destroy(42);
+client.foo.del(42);
+
 ```
 
 ```
