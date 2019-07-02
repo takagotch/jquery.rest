@@ -75,7 +75,7 @@ client.foo.del(42);
 
 ```
 
-```
+```json
 {
   'create': 'POST',
   'read': 'GET',
@@ -84,7 +84,7 @@ client.foo.del(42);
 }
 ```
 
-```
+```html
 <script src="ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://jpillora.com/jquery.rest/dist/1/jquery.rest.min.js"></script>
 ```
